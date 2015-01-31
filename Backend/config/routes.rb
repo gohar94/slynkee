@@ -9,4 +9,7 @@ Rails.application.routes.draw do
   get '/entries/new' => 'entries#new'
   post '/entries/create' => 'entries#create'
   get '/entries/show/(:id)' => 'entries#show'
+  patch '/entries/:id' => 'entries#update'
+  put '/entries/:id' => 'entries#update'
+  get '/entries/edit/:id' => 'entries#edit'
 end

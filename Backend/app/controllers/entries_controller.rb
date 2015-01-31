@@ -21,7 +21,22 @@ class EntriesController < ApplicationController
 			redirect_to(:action => 'show_entries_by_user')
 		else
 			flash[:notice] = "The entry could not be saved!"
-		    redirect_to(:action => 'new')
+		    render 'new'
+		end
+	end
+
+	def edit
+		@entry = Entry.find(params[:id])
+	end
+
+	def update
+		@entry = Entry.find(params[:id])
+		
+		if @entry.update(entry_params)
+			redirect_to(:action => 'show_entries_by_user')
+		else
+			flash[:notice] = "The entry could not be saved!"
+		    render 'edit'
 		end
 	end
 

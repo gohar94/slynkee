@@ -1,9 +1,9 @@
-<h2>Entries by: <%= session[:user_id] %></h2>
+<h2>Entries by: <%= current_user.name %></h2>
 <% @entries.each do |entry| %>
 	<h3>Entry</h3>
 	<p>
-		Content: <%= entry.content if entry.content %>
-		Message: <%= entry.message if entry.message %>
-		Created At: <%= entry.created_at if entry.created_at %>
+		<b>Content:</b> <%= entry.content if entry.content %>
+		<%= link_to 'Show', :action => 'show', :id => entry.id %>
+		<%= link_to 'Edit', {:action => 'edit', :id => entry.id} %>
 	</p>
 <% end %>
