@@ -58,3 +58,401 @@ Processing by UsersController#show as HTML
   [1m[35mCACHE (0.0ms)[0m  SELECT  `users`.* FROM `users`  WHERE `users`.`id` = 1 LIMIT 1  [["id", "1"]]
   Rendered users/show.html.erb within layouts/application (0.6ms)
 Completed 200 OK in 132ms (Views: 127.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2015-01-31 17:35:08 +0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (11.2ms)[0m  [1mSELECT  `users`.* FROM `users`  WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users`  WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `users`.* FROM `users`  WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", "1"]]
+  Rendered users/show.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 153ms (Views: 114.7ms | ActiveRecord: 11.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-01-31 17:36:51 +0500
+Processing by VisitorsController#index as HTML
+  [1m[35m (32.2ms)[0m  SELECT COUNT(*) FROM `users`
+  Rendered visitors/index.html.erb within layouts/application (35.0ms)
+Completed 500 Internal Server Error in 127ms
+
+Sprockets::Rails::Helper::AssetFilteredError - Asset filtered out and will not be served: add `Rails.application.config.assets.precompile += %w( google_analytics.js )` to `config/initializers/assets.rb` and restart your server:
+  sprockets-rails (2.2.4) lib/sprockets/rails/helper.rb:193:in `check_errors_for'
+  sprockets-rails (2.2.4) lib/sprockets/rails/helper.rb:137:in `block in javascript_include_tag'
+  sprockets-rails (2.2.4) lib/sprockets/rails/helper.rb:136:in `javascript_include_tag'
+   () Users/Gohar/Desktop/slynkee/Backend/app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb__1875387694953718567_70204485607940'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/actionview-4.1.7/lib/action_view/template.rb:145:in `block in render'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/activesupport-4.1.7/lib/active_support/notifications.rb:161:in `instrument'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/actionview-4.1.7/lib/action_view/template.rb:339:in `instrument'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/actionview-4.1.7/lib/action_view/template.rb:143:in `render'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/actionview-4.1.7/lib/action_view/renderer/template_renderer.rb:67:in `render_with_layout'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/actionview-4.1.7/lib/action_view/renderer/template_renderer.rb:53:in `render_template'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/actionview-4.1.7/lib/action_view/renderer/template_renderer.rb:17:in `render'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/actionview-4.1.7/lib/action_view/renderer/renderer.rb:42:in `render_template'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/actionview-4.1.7/lib/action_view/renderer/renderer.rb:23:in `render'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/actionview-4.1.7/lib/action_view/rendering.rb:99:in `_render_template'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/actionpack-4.1.7/lib/action_controller/metal/streaming.rb:217:in `_render_template'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/actionview-4.1.7/lib/action_view/rendering.rb:82:in `render_to_body'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/actionpack-4.1.7/lib/action_controller/metal/rendering.rb:32:in `render_to_body'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/actionpack-4.1.7/lib/action_controller/metal/renderers.rb:32:in `render_to_body'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/actionpack-4.1.7/lib/abstract_controller/rendering.rb:25:in `render'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/actionpack-4.1.7/lib/action_controller/metal/rendering.rb:16:in `render'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/actionpack-4.1.7/lib/action_controller/metal/instrumentation.rb:41:in `block (2 levels) in render'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/activesupport-4.1.7/lib/active_support/core_ext/benchmark.rb:12:in `block in ms'
+   () Users/Gohar/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/benchmark.rb:294:in `realtime'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/activesupport-4.1.7/lib/active_support/core_ext/benchmark.rb:12:in `ms'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/actionpack-4.1.7/lib/action_controller/metal/instrumentation.rb:41:in `block in render'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/actionpack-4.1.7/lib/action_controller/metal/instrumentation.rb:84:in `cleanup_view_runtime'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/activerecord-4.1.7/lib/active_record/railties/controller_runtime.rb:25:in `cleanup_view_runtime'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/actionpack-4.1.7/lib/action_controller/metal/instrumentation.rb:40:in `render'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/actionpack-4.1.7/lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/actionpack-4.1.7/lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/actionpack-4.1.7/lib/abstract_controller/base.rb:189:in `process_action'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/actionpack-4.1.7/lib/action_controller/metal/rendering.rb:10:in `process_action'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/actionpack-4.1.7/lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/activesupport-4.1.7/lib/active_support/callbacks.rb:113:in `call'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/activesupport-4.1.7/lib/active_support/callbacks.rb:229:in `block in halting'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/activesupport-4.1.7/lib/active_support/callbacks.rb:229:in `block in halting'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/activesupport-4.1.7/lib/active_support/callbacks.rb:166:in `block in halting'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/activesupport-4.1.7/lib/active_support/callbacks.rb:166:in `block in halting'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/activesupport-4.1.7/lib/active_support/callbacks.rb:166:in `block in halting'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/activesupport-4.1.7/lib/active_support/callbacks.rb:86:in `run_callbacks'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/actionpack-4.1.7/lib/abstract_controller/callbacks.rb:19:in `process_action'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/actionpack-4.1.7/lib/action_controller/metal/rescue.rb:29:in `process_action'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/actionpack-4.1.7/lib/action_controller/metal/instrumentation.rb:31:in `block in process_action'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/activesupport-4.1.7/lib/active_support/notifications.rb:159:in `block in instrument'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/activesupport-4.1.7/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/activesupport-4.1.7/lib/active_support/notifications.rb:159:in `instrument'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/actionpack-4.1.7/lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/actionpack-4.1.7/lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/activerecord-4.1.7/lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/actionpack-4.1.7/lib/abstract_controller/base.rb:136:in `process'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/actionview-4.1.7/lib/action_view/rendering.rb:30:in `process'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/actionpack-4.1.7/lib/action_controller/metal.rb:196:in `dispatch'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/actionpack-4.1.7/lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/actionpack-4.1.7/lib/action_controller/metal.rb:232:in `block in action'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/actionpack-4.1.7/lib/action_dispatch/routing/route_set.rb:82:in `dispatch'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/actionpack-4.1.7/lib/action_dispatch/routing/route_set.rb:50:in `call'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/actionpack-4.1.7/lib/action_dispatch/journey/router.rb:73:in `block in call'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/actionpack-4.1.7/lib/action_dispatch/journey/router.rb:59:in `call'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/actionpack-4.1.7/lib/action_dispatch/routing/route_set.rb:678:in `call'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/omniauth-1.2.2/lib/omniauth/strategy.rb:186:in `call!'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/omniauth-1.2.2/lib/omniauth/strategy.rb:164:in `call'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/omniauth-1.2.2/lib/omniauth/builder.rb:59:in `call'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/rack-1.5.2/lib/rack/etag.rb:23:in `call'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/rack-1.5.2/lib/rack/conditionalget.rb:25:in `call'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/rack-1.5.2/lib/rack/head.rb:11:in `call'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/actionpack-4.1.7/lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/actionpack-4.1.7/lib/action_dispatch/middleware/flash.rb:254:in `call'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/rack-1.5.2/lib/rack/session/abstract/id.rb:225:in `context'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/rack-1.5.2/lib/rack/session/abstract/id.rb:220:in `call'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/actionpack-4.1.7/lib/action_dispatch/middleware/cookies.rb:560:in `call'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/activerecord-4.1.7/lib/active_record/query_cache.rb:36:in `call'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/activerecord-4.1.7/lib/active_record/connection_adapters/abstract/connection_pool.rb:621:in `call'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/activerecord-4.1.7/lib/active_record/migration.rb:380:in `call'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/actionpack-4.1.7/lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/activesupport-4.1.7/lib/active_support/callbacks.rb:82:in `run_callbacks'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/actionpack-4.1.7/lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/actionpack-4.1.7/lib/action_dispatch/middleware/reloader.rb:73:in `call'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/actionpack-4.1.7/lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:57:in `call'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/actionpack-4.1.7/lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/actionpack-4.1.7/lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/railties-4.1.7/lib/rails/rack/logger.rb:38:in `call_app'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/railties-4.1.7/lib/rails/rack/logger.rb:20:in `block in call'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/activesupport-4.1.7/lib/active_support/tagged_logging.rb:68:in `block in tagged'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/activesupport-4.1.7/lib/active_support/tagged_logging.rb:26:in `tagged'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/activesupport-4.1.7/lib/active_support/tagged_logging.rb:68:in `tagged'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/railties-4.1.7/lib/rails/rack/logger.rb:20:in `call'
+  quiet_assets (1.1.0) lib/quiet_assets.rb:27:in `call_with_quiet_assets'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/actionpack-4.1.7/lib/action_dispatch/middleware/request_id.rb:21:in `call'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/rack-1.5.2/lib/rack/methodoverride.rb:21:in `call'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/rack-1.5.2/lib/rack/runtime.rb:17:in `call'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/activesupport-4.1.7/lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/rack-1.5.2/lib/rack/lock.rb:17:in `call'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/actionpack-4.1.7/lib/action_dispatch/middleware/static.rb:84:in `call'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/rack-1.5.2/lib/rack/sendfile.rb:112:in `call'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/railties-4.1.7/lib/rails/engine.rb:514:in `call'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/railties-4.1.7/lib/rails/application.rb:144:in `call'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/rack-1.5.2/lib/rack/lock.rb:17:in `call'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/rack-1.5.2/lib/rack/content_length.rb:14:in `call'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/rack-1.5.2/lib/rack/handler/webrick.rb:60:in `service'
+   () Users/Gohar/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+   () Users/Gohar/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+   () Users/Gohar/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+
+Started POST "/__better_errors/302aae702fb05f8d/variables" for 127.0.0.1 at 2015-01-31 17:36:52 +0500
+
+
+Started GET "/" for 127.0.0.1 at 2015-01-31 17:37:12 +0500
+Processing by VisitorsController#index as HTML
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `users`[0m
+  Rendered visitors/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 55ms (Views: 53.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2015-01-31 17:37:48 +0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (10.5ms)[0m  SELECT  `users`.* FROM `users`  WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  `users`.* FROM `users`  WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `users`.* FROM `users`  WHERE `users`.`id` = 1 LIMIT 1  [["id", "1"]]
+  Rendered users/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 67ms (Views: 53.3ms | ActiveRecord: 10.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-01-31 17:39:01 +0500
+Processing by VisitorsController#index as HTML
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM `users`[0m
+  Rendered visitors/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 319ms (Views: 317.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-01-31 17:39:38 +0500
+Processing by VisitorsController#index as HTML
+  [1m[35m (1.4ms)[0m  SELECT COUNT(*) FROM `users`
+  Rendered visitors/index.html.erb within layouts/application (12.1ms)
+Completed 200 OK in 138ms (Views: 132.0ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-01-31 17:40:24 +0500
+  [1m[36mActiveRecord::SchemaMigration Load (1.2ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by VisitorsController#index as HTML
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM `users`
+  Rendered visitors/index.html.erb within layouts/application (10.6ms)
+Completed 200 OK in 110ms (Views: 94.2ms | ActiveRecord: 4.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-01-31 17:42:23 +0500
+Processing by VisitorsController#index as HTML
+  [1m[36m (1.8ms)[0m  [1mSELECT COUNT(*) FROM `users`[0m
+  Rendered visitors/index.html.erb within layouts/application (10.6ms)
+Completed 200 OK in 467ms (Views: 461.4ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-01-31 17:43:06 +0500
+Processing by VisitorsController#index as HTML
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM `users`
+  Rendered visitors/index.html.erb within layouts/application (1.6ms)
+Completed 500 Internal Server Error in 264ms
+
+ExecJS::RuntimeError - SyntaxError: [stdin]:29:1: unexpected indentation
+  (in /Users/Gohar/Desktop/slynkee/Backend/app/assets/javascripts/google_analytics.js.coffee):
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/execjs-2.2.2/lib/execjs/external_runtime.rb:62:in `extract_result'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/execjs-2.2.2/lib/execjs/external_runtime.rb:29:in `exec'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/execjs-2.2.2/lib/execjs/external_runtime.rb:18:in `eval'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/execjs-2.2.2/lib/execjs/external_runtime.rb:36:in `call'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/coffee-script-2.3.0/lib/coffee_script.rb:76:in `compile'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/tilt-1.4.1/lib/tilt/coffee.rb:46:in `evaluate'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/tilt-1.4.1/lib/tilt/template.rb:103:in `render'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/sprockets-2.12.3/lib/sprockets/context.rb:197:in `block in evaluate'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/sprockets-2.12.3/lib/sprockets/context.rb:194:in `evaluate'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/sprockets-2.12.3/lib/sprockets/processed_asset.rb:12:in `initialize'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/sprockets-2.12.3/lib/sprockets/base.rb:374:in `block in build_asset'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/sprockets-2.12.3/lib/sprockets/base.rb:395:in `circular_call_protection'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/sprockets-2.12.3/lib/sprockets/base.rb:373:in `build_asset'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/sprockets-2.12.3/lib/sprockets/index.rb:94:in `block in build_asset'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/sprockets-2.12.3/lib/sprockets/caching.rb:58:in `cache_asset'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/sprockets-2.12.3/lib/sprockets/index.rb:93:in `build_asset'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/sprockets-2.12.3/lib/sprockets/base.rb:287:in `find_asset'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/sprockets-2.12.3/lib/sprockets/index.rb:61:in `find_asset'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/sprockets-2.12.3/lib/sprockets/processed_asset.rb:44:in `block in init_with'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/sprockets-2.12.3/lib/sprockets/processed_asset.rb:37:in `init_with'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/sprockets-2.12.3/lib/sprockets/asset.rb:24:in `from_hash'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/sprockets-2.12.3/lib/sprockets/caching.rb:54:in `cache_asset'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/sprockets-2.12.3/lib/sprockets/index.rb:93:in `build_asset'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/sprockets-2.12.3/lib/sprockets/base.rb:287:in `find_asset'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/sprockets-2.12.3/lib/sprockets/index.rb:61:in `find_asset'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/sprockets-2.12.3/lib/sprockets/bundled_asset.rb:37:in `init_with'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/sprockets-2.12.3/lib/sprockets/asset.rb:24:in `from_hash'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/sprockets-2.12.3/lib/sprockets/caching.rb:54:in `cache_asset'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/sprockets-2.12.3/lib/sprockets/index.rb:93:in `build_asset'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/sprockets-2.12.3/lib/sprockets/base.rb:287:in `find_asset'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/sprockets-2.12.3/lib/sprockets/index.rb:61:in `find_asset'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/sprockets-2.12.3/lib/sprockets/environment.rb:75:in `find_asset'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/sprockets-2.12.3/lib/sprockets/base.rb:295:in `[]'
+  sprockets-rails (2.2.4) lib/sprockets/rails/helper.rb:230:in `lookup_asset_for_path'
+  sprockets-rails (2.2.4) lib/sprockets/rails/helper.rb:190:in `check_errors_for'
+  sprockets-rails (2.2.4) lib/sprockets/rails/helper.rb:137:in `block in javascript_include_tag'
+  sprockets-rails (2.2.4) lib/sprockets/rails/helper.rb:136:in `javascript_include_tag'
+   () Users/Gohar/Desktop/slynkee/Backend/app/views/layouts/application.html.erb:6:in `_app_views_layouts_application_html_erb__3257937709717154223_70142804171660'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/actionview-4.1.7/lib/action_view/template.rb:145:in `block in render'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/activesupport-4.1.7/lib/active_support/notifications.rb:161:in `instrument'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/actionview-4.1.7/lib/action_view/template.rb:339:in `instrument'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/actionview-4.1.7/lib/action_view/template.rb:143:in `render'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/actionview-4.1.7/lib/action_view/renderer/template_renderer.rb:67:in `render_with_layout'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/actionview-4.1.7/lib/action_view/renderer/template_renderer.rb:53:in `render_template'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/actionview-4.1.7/lib/action_view/renderer/template_renderer.rb:17:in `render'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/actionview-4.1.7/lib/action_view/renderer/renderer.rb:42:in `render_template'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/actionview-4.1.7/lib/action_view/renderer/renderer.rb:23:in `render'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/actionview-4.1.7/lib/action_view/rendering.rb:99:in `_render_template'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/actionpack-4.1.7/lib/action_controller/metal/streaming.rb:217:in `_render_template'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/actionview-4.1.7/lib/action_view/rendering.rb:82:in `render_to_body'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/actionpack-4.1.7/lib/action_controller/metal/rendering.rb:32:in `render_to_body'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/actionpack-4.1.7/lib/action_controller/metal/renderers.rb:32:in `render_to_body'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/actionpack-4.1.7/lib/abstract_controller/rendering.rb:25:in `render'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/actionpack-4.1.7/lib/action_controller/metal/rendering.rb:16:in `render'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/actionpack-4.1.7/lib/action_controller/metal/instrumentation.rb:41:in `block (2 levels) in render'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/activesupport-4.1.7/lib/active_support/core_ext/benchmark.rb:12:in `block in ms'
+   () Users/Gohar/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/benchmark.rb:294:in `realtime'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/activesupport-4.1.7/lib/active_support/core_ext/benchmark.rb:12:in `ms'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/actionpack-4.1.7/lib/action_controller/metal/instrumentation.rb:41:in `block in render'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/actionpack-4.1.7/lib/action_controller/metal/instrumentation.rb:84:in `cleanup_view_runtime'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/activerecord-4.1.7/lib/active_record/railties/controller_runtime.rb:25:in `cleanup_view_runtime'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/actionpack-4.1.7/lib/action_controller/metal/instrumentation.rb:40:in `render'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/actionpack-4.1.7/lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/actionpack-4.1.7/lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/actionpack-4.1.7/lib/abstract_controller/base.rb:189:in `process_action'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/actionpack-4.1.7/lib/action_controller/metal/rendering.rb:10:in `process_action'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/actionpack-4.1.7/lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/activesupport-4.1.7/lib/active_support/callbacks.rb:113:in `call'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/activesupport-4.1.7/lib/active_support/callbacks.rb:229:in `block in halting'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/activesupport-4.1.7/lib/active_support/callbacks.rb:229:in `block in halting'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/activesupport-4.1.7/lib/active_support/callbacks.rb:166:in `block in halting'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/activesupport-4.1.7/lib/active_support/callbacks.rb:166:in `block in halting'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/activesupport-4.1.7/lib/active_support/callbacks.rb:166:in `block in halting'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/activesupport-4.1.7/lib/active_support/callbacks.rb:86:in `run_callbacks'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/actionpack-4.1.7/lib/abstract_controller/callbacks.rb:19:in `process_action'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/actionpack-4.1.7/lib/action_controller/metal/rescue.rb:29:in `process_action'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/actionpack-4.1.7/lib/action_controller/metal/instrumentation.rb:31:in `block in process_action'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/activesupport-4.1.7/lib/active_support/notifications.rb:159:in `block in instrument'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/activesupport-4.1.7/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/activesupport-4.1.7/lib/active_support/notifications.rb:159:in `instrument'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/actionpack-4.1.7/lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/actionpack-4.1.7/lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/activerecord-4.1.7/lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/actionpack-4.1.7/lib/abstract_controller/base.rb:136:in `process'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/actionview-4.1.7/lib/action_view/rendering.rb:30:in `process'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/actionpack-4.1.7/lib/action_controller/metal.rb:196:in `dispatch'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/actionpack-4.1.7/lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/actionpack-4.1.7/lib/action_controller/metal.rb:232:in `block in action'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/actionpack-4.1.7/lib/action_dispatch/routing/route_set.rb:82:in `dispatch'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/actionpack-4.1.7/lib/action_dispatch/routing/route_set.rb:50:in `call'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/actionpack-4.1.7/lib/action_dispatch/journey/router.rb:73:in `block in call'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/actionpack-4.1.7/lib/action_dispatch/journey/router.rb:59:in `call'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/actionpack-4.1.7/lib/action_dispatch/routing/route_set.rb:678:in `call'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/omniauth-1.2.2/lib/omniauth/strategy.rb:186:in `call!'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/omniauth-1.2.2/lib/omniauth/strategy.rb:164:in `call'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/omniauth-1.2.2/lib/omniauth/builder.rb:59:in `call'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/rack-1.5.2/lib/rack/etag.rb:23:in `call'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/rack-1.5.2/lib/rack/conditionalget.rb:25:in `call'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/rack-1.5.2/lib/rack/head.rb:11:in `call'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/actionpack-4.1.7/lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/actionpack-4.1.7/lib/action_dispatch/middleware/flash.rb:254:in `call'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/rack-1.5.2/lib/rack/session/abstract/id.rb:225:in `context'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/rack-1.5.2/lib/rack/session/abstract/id.rb:220:in `call'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/actionpack-4.1.7/lib/action_dispatch/middleware/cookies.rb:560:in `call'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/activerecord-4.1.7/lib/active_record/query_cache.rb:36:in `call'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/activerecord-4.1.7/lib/active_record/connection_adapters/abstract/connection_pool.rb:621:in `call'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/activerecord-4.1.7/lib/active_record/migration.rb:380:in `call'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/actionpack-4.1.7/lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/activesupport-4.1.7/lib/active_support/callbacks.rb:82:in `run_callbacks'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/actionpack-4.1.7/lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/actionpack-4.1.7/lib/action_dispatch/middleware/reloader.rb:73:in `call'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/actionpack-4.1.7/lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:57:in `call'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/actionpack-4.1.7/lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/actionpack-4.1.7/lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/railties-4.1.7/lib/rails/rack/logger.rb:38:in `call_app'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/railties-4.1.7/lib/rails/rack/logger.rb:20:in `block in call'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/activesupport-4.1.7/lib/active_support/tagged_logging.rb:68:in `block in tagged'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/activesupport-4.1.7/lib/active_support/tagged_logging.rb:26:in `tagged'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/activesupport-4.1.7/lib/active_support/tagged_logging.rb:68:in `tagged'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/railties-4.1.7/lib/rails/rack/logger.rb:20:in `call'
+  quiet_assets (1.1.0) lib/quiet_assets.rb:27:in `call_with_quiet_assets'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/actionpack-4.1.7/lib/action_dispatch/middleware/request_id.rb:21:in `call'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/rack-1.5.2/lib/rack/methodoverride.rb:21:in `call'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/rack-1.5.2/lib/rack/runtime.rb:17:in `call'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/activesupport-4.1.7/lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/rack-1.5.2/lib/rack/lock.rb:17:in `call'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/actionpack-4.1.7/lib/action_dispatch/middleware/static.rb:84:in `call'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/rack-1.5.2/lib/rack/sendfile.rb:112:in `call'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/railties-4.1.7/lib/rails/engine.rb:514:in `call'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/railties-4.1.7/lib/rails/application.rb:144:in `call'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/rack-1.5.2/lib/rack/lock.rb:17:in `call'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/rack-1.5.2/lib/rack/content_length.rb:14:in `call'
+   () Users/Gohar/.rvm/gems/ruby-2.1.5@global/gems/rack-1.5.2/lib/rack/handler/webrick.rb:60:in `service'
+   () Users/Gohar/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+   () Users/Gohar/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+   () Users/Gohar/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+
+Started POST "/__better_errors/9d9d2c838a4af0ed/variables" for 127.0.0.1 at 2015-01-31 17:43:06 +0500
+
+
+Started GET "/" for 127.0.0.1 at 2015-01-31 17:43:21 +0500
+Processing by VisitorsController#index as HTML
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM `users`[0m
+  Rendered visitors/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 285ms (Views: 283.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-01-31 17:44:23 +0500
+Processing by VisitorsController#index as HTML
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM `users`
+  Rendered visitors/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 49ms (Views: 48.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2015-01-31 17:44:33 +0500
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (8.0ms)[0m  [1mSELECT  `users`.* FROM `users`  WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT `users`.* FROM `users`
+  Rendered users/_user.html.erb (1.4ms)
+  Rendered users/index.html.erb within layouts/application (8.1ms)
+Completed 200 OK in 78ms (Views: 60.5ms | ActiveRecord: 8.4ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2015-01-31 17:45:02 +0500
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users`  WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT `users`.* FROM `users`
+  Rendered users/_user.html.erb (0.7ms)
+  Rendered users/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 360ms (Views: 357.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2015-01-31 17:45:20 +0500
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  `users`.* FROM `users`  WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT `users`.* FROM `users`
+  Rendered users/_user.html.erb (0.5ms)
+  Rendered users/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 54ms (Views: 51.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-01-31 17:45:40 +0500
+Processing by VisitorsController#index as HTML
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM `users`[0m
+  Rendered visitors/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 59ms (Views: 57.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-01-31 17:46:11 +0500
+Processing by VisitorsController#index as HTML
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM `users`
+  Rendered visitors/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 328ms (Views: 327.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-01-31 17:46:17 +0500
+Processing by VisitorsController#index as HTML
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM `users`[0m
+  Rendered visitors/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 69ms (Views: 68.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2015-01-31 17:46:33 +0500
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  `users`.* FROM `users`  WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT `users`.* FROM `users`[0m
+  Rendered users/_user.html.erb (0.4ms)
+  Rendered users/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 47ms (Views: 45.5ms | ActiveRecord: 0.6ms)
