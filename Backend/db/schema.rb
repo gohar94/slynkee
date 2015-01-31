@@ -11,7 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150131122540) do
+ActiveRecord::Schema.define(version: 20150131145112) do
+
+  create_table "entries", force: true do |t|
+    t.integer  "user_id",                  null: false
+    t.string   "device",                   null: false
+    t.string   "content",    limit: 5000
+    t.string   "message",    limit: 10000
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "name"

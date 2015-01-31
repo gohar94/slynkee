@@ -1,0 +1,39 @@
+<!-- Form for creating new entries. -->
+<%= form_for :entry, :url => {:action => 'create'} do |f| %> 
+
+  <!-- This will display the errors in case the form does not submit. -->
+  <% if @entry.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@entry.errors.count, "error") %> prohibited
+        this article from being saved:
+      </h2>
+      <ul>
+        <% @entry.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+  <!-- These are the form fields. -->
+  <%= f.hidden_field :user_id, :value => current_user.id %>
+  <%= f.hidden_field :device, :value => 'web' %>
+
+  <p>
+    <%= f.label :content %><br>
+    <%= f.text_field :content %>
+  </p>
+
+  <p>
+    <%= f.label :message %><br>
+    <%= f.text_area :message %>
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+
+  <% end %>
+
+  <!-- Go back to the entries page. -->
