@@ -9,16 +9,11 @@
 	
 	<body>
 		<%= render(:partial => "layouts/navigation_links") %>
-		<% if !flash[:notice].blank? %>
-		  <div id="flash_notice">
-		    <%= flash[:notice] %>
-		  </div>
-		<% end %>
 		
-		<% if !flash[:alert].blank? %>
-		  <div id="flash_alert">
-		    <%= flash[:alert] %>
-		  </div>
+		<% flash.each do |name, msg| %>
+			<div class="alert alert-<%= name == :notice ? "success" : "error" %>">
+			  <%= content_tag :div, msg, :id => "flash_#{name}" if msg.is_a?(String) %>
+			</div>
 		<% end %>
 		
 		<%= yield %>
