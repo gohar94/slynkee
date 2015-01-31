@@ -1,0 +1,60 @@
+  [1m[36m (30.9ms)[0m  [1mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (30.0ms)[0m  CREATE UNIQUE INDEX `unique_schema_migrations`  ON `schema_migrations` (`version`) 
+  [1m[36mActiveRecord::SchemaMigration Load (1.3ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Migrating to CreateUsers (20150131122540)
+  [1m[35m (12.1ms)[0m  CREATE TABLE `users` (`id` int(11) auto_increment PRIMARY KEY, `name` varchar(255), `provider` varchar(255), `uid` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (0.6ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (2.3ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20150131122540')
+  [1m[36m (0.7ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT `schema_migrations`.* FROM `schema_migrations`
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT `schema_migrations`.* FROM `schema_migrations`
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+
+
+Started GET "/" for 127.0.0.1 at 2015-01-31 17:28:17 +0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by VisitorsController#index as HTML
+  [1m[35m (2.5ms)[0m  SELECT COUNT(*) FROM `users`
+  Rendered visitors/index.html.erb within layouts/application (11.7ms)
+Completed 200 OK in 763ms (Views: 744.8ms | ActiveRecord: 5.3ms)
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2015-01-31 17:28:28 +0500
+
+
+Started GET "/auth/facebook/callback?code=AQAZwgRsTLTGjq6rfXZW1iekV7LCJNL-dB3nAuHGbRxbz4VIKSJadScf_5Thj3G1QWS4JU_HYSUGLk5q-WkbR-hWPaprqnyZov6pcgBTbq-vlfpSpHyFd0At1nNiHmx-SQJgPlwue8IS6XrGATiZ1LrCRIknvI2t--UdLcv2a9HM8YLcLVOFaRSb33V-J6hrpcbXSv9t9uJM-_6z_ZFeTQQc6-LjPyvotAnkyzZpdOOuIZH_Kdw9RJunSmSp1xkZTZKNfBi7i9U98zW3RDftYXfcOK40GZBGgzInG9QxJb7Pcy5FhjOg5BQve7gtI6nvyXRhKZdF-sy7YTzcmX8DA2eX&state=555fa0b03836b98271035eaa361eba2c1e54558f6385e2a6" for 127.0.0.1 at 2015-01-31 17:28:30 +0500
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"AQAZwgRsTLTGjq6rfXZW1iekV7LCJNL-dB3nAuHGbRxbz4VIKSJadScf_5Thj3G1QWS4JU_HYSUGLk5q-WkbR-hWPaprqnyZov6pcgBTbq-vlfpSpHyFd0At1nNiHmx-SQJgPlwue8IS6XrGATiZ1LrCRIknvI2t--UdLcv2a9HM8YLcLVOFaRSb33V-J6hrpcbXSv9t9uJM-_6z_ZFeTQQc6-LjPyvotAnkyzZpdOOuIZH_Kdw9RJunSmSp1xkZTZKNfBi7i9U98zW3RDftYXfcOK40GZBGgzInG9QxJb7Pcy5FhjOg5BQve7gtI6nvyXRhKZdF-sy7YTzcmX8DA2eX", "state"=>"555fa0b03836b98271035eaa361eba2c1e54558f6385e2a6", "provider"=>"facebook"}
+  [1m[36mUser Load (6.1ms)[0m  [1mSELECT  `users`.* FROM `users`  WHERE `users`.`provider` = 'facebook' AND `users`.`uid` = '10153050538102744'  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36mSQL (4.4ms)[0m  [1mINSERT INTO `users` (`created_at`, `name`, `provider`, `uid`, `updated_at`) VALUES ('2015-01-31 12:28:35', 'Gohar Irfan', 'facebook', '10153050538102744', '2015-01-31 12:28:35')[0m
+  [1m[35m (1.4ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 95ms (ActiveRecord: 12.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-01-31 17:28:35 +0500
+Processing by VisitorsController#index as HTML
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM `users`[0m
+  Rendered visitors/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 120ms (Views: 117.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2015-01-31 17:28:58 +0500
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (2.2ms)[0m  SELECT  `users`.* FROM `users`  WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT `users`.* FROM `users`[0m
+  Rendered users/_user.html.erb (3.6ms)
+  Rendered users/index.html.erb within layouts/application (23.7ms)
+Completed 200 OK in 119ms (Views: 99.1ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2015-01-31 17:28:59 +0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  `users`.* FROM `users`  WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  `users`.* FROM `users`  WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `users`.* FROM `users`  WHERE `users`.`id` = 1 LIMIT 1  [["id", "1"]]
+  Rendered users/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 132ms (Views: 127.4ms | ActiveRecord: 0.6ms)
